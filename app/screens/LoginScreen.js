@@ -4,27 +4,29 @@ import React from 'react';
 import { SafeAreaView, StyleSheet, View } from 'react-native';
 import Logo from '../components/Logo';
 import { colors } from '../styles/colors';
+import Button from '../components/Button'
 
 const LoginScreen = () => {
     const router = useRouter();
 
     const goToParentRegister = () => {
-        router.push('/screens/RegisterOrtu');
+        router.push('/screens/RegisterPatrentScreen');
     };
 
     const goToTeacherRegister = () => {
-        router.push('/screens/RegisterGuru')
+        router.push('/screens/RegisterTeacherScreen')
     }
 
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.content}>
-                <Logo />
-                <View style={styles.buttonContainer}>
+                {/* Logo */}
+                <View style={styles.logoSection}>
+                    <Logo />
                 </View>
-                <View style={styles.container}>
-                </View>
-                <View style={styles.buttonContainer}>
+
+                {/* Button */}
+                <View style={styles.buttonSection}>
                     <Button
                         title="Orang Tua"
                         onPress={goToParentRegister}
@@ -34,6 +36,8 @@ const LoginScreen = () => {
                         onPress={goToTeacherRegister}
                     />
                 </View>
+
+                <View style={styles.spacer} />
             </View>
         </SafeAreaView>
     );
@@ -46,13 +50,29 @@ const styles = StyleSheet.create({
     },
     content: {
         flex: 1,
-        justifyContent: 'center',
+        justifyContent: 'center', 
         alignItems: 'center',
         paddingHorizontal: 20,
-    },
+        paddingVertical: 360, // Padding atas dan bawah
+        marginBottom: 60,
+    
+    },  
 
     buttonContainer: {
+        flex: 1,
+        justifyContent: 'center',
         alignItems: 'center',
+        width: '100%',
+    },
+
+    logoContainer :{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%',
+    },
+     spacer: {
+        flex: 0.5,
     },
 });
 
