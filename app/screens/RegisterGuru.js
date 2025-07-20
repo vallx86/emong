@@ -1,12 +1,12 @@
+import React, { useState } from 'react';
+import { View, StyleSheet, SafeAreaView, Alert } from 'react-native';
 import { useRouter } from 'expo-router';
-import { useState } from 'react';
-import { Alert, SafeAreaView, StyleSheet, View } from 'react-native';
-import Button from '../components/Button';
-import Logo from '../components/Logo';
-import CustomTextInput from '../components/TextInput';
 import { colors } from '../styles/colors';
+import Logo from '../components/Logo';
+import Button from '../components/Button';
+import CustomTextInput from '../components/TextInput';
 
-const RegisterGuru = () => {
+const RegisterTeacherScreen = () => {
     const router = useRouter();
     const [nidn, setNidn] = useState('');
     const [password, setPassword] = useState('');
@@ -17,6 +17,7 @@ const RegisterGuru = () => {
             return;
         }
 
+        // penambahan logika login
         Alert.alert('Berhasil', `Login Guru dengan NIDN: ${nidn}`);
         console.log('Teacher Login:', { nidn, password });
     };
@@ -66,4 +67,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default RegisterGuru;
+export default RegisterTeacherScreen;

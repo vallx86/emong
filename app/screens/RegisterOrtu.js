@@ -6,7 +6,7 @@ import Logo from '../components/Logo';
 import Button from '../components/Button';
 import CustomTextInput from '../components/TextInput';
 
-const RegisterOrtu = () => {
+const RegisterParentScreen = () => {
     const router = useRouter();
     const [nidn, setNidn] = useState('');
     const [password, setPassword] = useState('');
@@ -17,7 +17,7 @@ const RegisterOrtu = () => {
             return;
         }
 
-        // Di sini nanti bisa ditambahkan logika login
+        // penambahan logika login
         Alert.alert('Berhasil', `Login Orang Tua dengan NIDN: ${nidn}`);
         console.log('Parent Login:', { nidn, password });
     };
@@ -66,5 +66,3 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
 });
-
-export default RegisterOrtu;
