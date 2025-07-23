@@ -10,12 +10,12 @@ const LoginScreen = () => {
     const router = useRouter();
 
     const goToParentRegister = () => {
-        router.push('/screens/RegisterPatrentScreen');
+        router.push('/screens/RegisterParentScreen');
     };
 
     const goToTeacherRegister = () => {
         router.push('/screens/RegisterTeacherScreen')
-    }
+    };
 
     return (
         <SafeAreaView style={styles.container}>
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: colors.gray,
-    },
+    },  
     content: {
         flex: 1,
         justifyContent: 'center', 
@@ -55,7 +55,6 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         paddingVertical: 360, // Padding atas dan bawah
         marginBottom: 60,
-    
     },  
 
     buttonContainer: {
@@ -71,6 +70,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         width: '100%',
     },
+
      spacer: {
         flex: 0.5,
     },
