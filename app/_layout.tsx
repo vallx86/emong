@@ -1,3 +1,4 @@
+
 import { Stack } from 'expo-router';
 
 export default function RootLayout() {
@@ -5,7 +6,7 @@ export default function RootLayout() {
     <Stack
       screenOptions={{
         headerStyle: {
-          backgroundColor: '#4CAF50',
+          backgroundColor: '#52de2cff',
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
@@ -15,15 +16,22 @@ export default function RootLayout() {
     >
       <Stack.Screen
         name="index"
-        options={{ title: 'Login' }}
+        options={{ title: 'Login EmonG' }}
       />
       <Stack.Screen
-        name="screens/RegisterParentScreen"
-        options={{ title: 'Register Orang Tua' }}
+        name="screens/auth/RegisterParentScreen"
+        options={{ title: 'Login Orang Tua' }}
       />
       <Stack.Screen
-        name="screens/RegisterTeacherScreen"
-        options={{ title: 'Register Guru' }}
+        name="screens/auth/RegisterTeacherScreen"
+        options={{ title: 'Login Guru' }}
+      />
+      <Stack.Screen
+        name="screens/dashboard/ParentDashboardScreen"
+        options={{
+          title: 'Dashboard Orang Tua',
+          headerBackVisible: false, // Tidak bisa kembali ke login
+        }}
       />
     </Stack>
   );

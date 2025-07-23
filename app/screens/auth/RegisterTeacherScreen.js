@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, SafeAreaView, Alert } from 'react-native';
+import { View, StyleSheet, SafeAreaView, Alert, Dimensions} from 'react-native';
 import { useRouter } from 'expo-router';
-import { colors } from '../styles/colors';
-import Logo from '../components/Logo';
-import Button from '../components/Button';
-import CustomTextInput from '../components/TextInput';
+import { colors } from '../../styles/colors';
+import Logo from '../../components/common/Logo';
+import Button from '../../components/common/Button';
+import CustomTextInput from '../../components/common/TextInput';
+
+const { width, height } = Dimensions.get('window');
 
 const RegisterTeacherScreen = () => {
     const router = useRouter();
@@ -60,10 +62,12 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        paddingHorizontal: 20,
+        paddingHorizontal: width * 0.05,       // 5% dari lebar layar
+        paddingVertical: height * 0.05,        // 5% dari tinggi layar
     },
     formContainer: {
         alignItems: 'center',
+        minHeight: height * 0.35, 
     },
 });
 
