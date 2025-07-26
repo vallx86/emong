@@ -12,12 +12,12 @@ const LoginScreen = () => {
 
     const goToParentRegister = () => {
         console.log('Navigating to RegisterParentScreen...');
-        router.push('screens\auth\RegisterParentScreen.js');
+        router.push('/screens/auth/RegisterParentScreen');
     };
 
     const goToTeacherRegister = () => {
         console.log('Navigating to RegisterTeacherScreen...');
-        router.push('\screens\auth\RegisterTeacherScreen.js/RegisterTeacherScreen');
+        router.push('/screens/auth/RegisterTeacherScreen');
     };
 
     return (
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         width: '100%',
-        marginBottom : 300,
+        marginBottom: 300,
         minHeight: height * 0.2,               // Min 20% tinggi layar
     },
     spacer: {

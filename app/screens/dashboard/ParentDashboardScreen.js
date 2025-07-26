@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, SafeAreaView, ScrollView, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView, ScrollView, Dimensions } from 'react-native';
 import { colors } from '../../styles/colors';
 import UserProfile from '../../components/dashboard/UserProfile';
 import DashboardTabs from '../../components/dashboard/DashboardTabs';
 import PieChart from '../../components/charts/PieChart';
 import EmotionLegend from '../../components/charts/EmotionLegend';
-import RiwayatItem from '../components/dasboard/RiwayatItem';
+import RiwayatItem from '../../components/dashboard/RiwayatItem';
 import { emotionData, riwayatData, userProfile } from '../../data/mockData';
 
 const { width, height } = Dimensions.get('window');
@@ -32,8 +32,12 @@ const ParentDashboardScreen = () => {
         </ScrollView>
     );
 
+    // Tambahkan console.log untuk debugging
+    console.log('ParentDashboardScreen rendered');
+
     return (
         <SafeAreaView style={styles.container}>
+            <Text style={styles.debugText}>Dashboard Loaded Successfully!</Text>
             <UserProfile user={userProfile} />
             <DashboardTabs activeTab={activeTab} onTabPress={setActiveTab} />
             {activeTab === 'realtime' ? renderRealtimeContent() : renderRiwayatContent()}
@@ -45,6 +49,13 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: colors.gray,
+    },
+    debugText: {
+        textAlign: 'center',
+        padding: 10,
+        backgroundColor: colors.success,
+        color: colors.white,
+        fontWeight: 'bold',
     },
     contentContainer: {
         flex: 1,

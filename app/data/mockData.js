@@ -22,5 +22,6 @@ export const riwayatData = [
 export const userProfile = {
     name: 'Fahrurrozi Naim S.',
     id: '120016729',
-    avatar: require('../../assets/images/profile-avatar.png'), // Tambahkan gambar avatar
+ 
+    avatar: '../../assets/images/kuceng.png',
 };

@@ -1,4 +1,3 @@
-
 import { Stack } from 'expo-router';
 
 export default function RootLayout() {
@@ -30,7 +29,7 @@ export default function RootLayout() {
         name="screens/dashboard/ParentDashboardScreen"
         options={{
           title: 'Dashboard Orang Tua',
-          headerBackVisible: false, // Tidak bisa kembali ke login
+          headerBackVisible: false,
         }}
       />
     </Stack>
