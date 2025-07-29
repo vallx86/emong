@@ -32,6 +32,28 @@ export default function RootLayout() {
           headerBackVisible: false,
         }}
       />
+      <Stack.Screen
+        name="screens/dashboard/TeacherDashboardScreen"
+        options={{
+          title: 'Dashboard Guru',
+          headerBackVisible: false,
+        }}
+      />
+      <Stack.Screen
+        name="screens/teacher/StudentDetailScreen"
+        options={{
+          title: 'Detail Siswa',
+          headerBackVisible: false,
+        }}
+      />
+      <Stack.Screen
+        name="screens/teacher/StudentChartScreen"
+        options={{
+          title: 'Grafik Emosi',
+          headerBackVisible: false,
+        }}
+      />
     </Stack>
+
   );
 }

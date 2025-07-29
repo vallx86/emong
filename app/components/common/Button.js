@@ -1,13 +1,14 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet, Dimensions} from 'react-native';
+import { TouchableOpacity, Text, StyleSheet, Dimensions } from 'react-native';
 import { colors } from '../../styles/colors';
 
-const {width, height} = Dimensions.get('window')
+const { width, height } = Dimensions.get('window');
 
-const Button = ({ title, onPress }) => {
+// Tambahkan props style dan textStyle
+const Button = ({ title, onPress, style, textStyle }) => {
     return (
-        <TouchableOpacity style={styles.button} onPress={onPress}>
-            <Text style={styles.buttonText}>{title}</Text>
+        <TouchableOpacity style={[styles.button, style]} onPress={onPress}>
+            <Text style={[styles.buttonText, textStyle]}>{title}</Text>
         </TouchableOpacity>
     );
 };

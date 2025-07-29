@@ -7,11 +7,14 @@ import PieChart from '../../components/charts/PieChart';
 import EmotionLegend from '../../components/charts/EmotionLegend';
 import RiwayatItem from '../../components/dashboard/RiwayatItem';
 import { emotionData, riwayatData, userProfile } from '../../data/mockData';
+import { useRouter } from 'expo-router';
+import Button from '../../components/common/Button';
 
 const { width, height } = Dimensions.get('window');
 
 const ParentDashboardScreen = () => {
     const [activeTab, setActiveTab] = useState('realtime');
+    const router = useRouter();
 
     const renderRealtimeContent = () => (
         <ScrollView style={styles.contentContainer} showsVerticalScrollIndicator={false}>
@@ -19,6 +22,12 @@ const ParentDashboardScreen = () => {
                 <PieChart data={emotionData} />
             </View>
             <EmotionLegend data={emotionData} />
+            <Button
+                title="Logout"
+                onPress={handleLogout}
+                style={styles.logoutButton}
+                textStyle={styles.logoutButtonText}
+            />
         </ScrollView>
     );
 
@@ -31,6 +40,10 @@ const ParentDashboardScreen = () => {
             </View>
         </ScrollView>
     );
+
+    const handleLogout = () => {
+        router.replace('/');
+    };
 
     // Tambahkan console.log untuk debugging
     console.log('ParentDashboardScreen rendered');
@@ -76,6 +89,30 @@ const styles = StyleSheet.create({
     },
     riwayatContainer: {
         paddingVertical: height * 0.02,
+    },
+    profileRow: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingHorizontal: width * 0.05,
+        marginBottom: 8,
+    },
+    logoutButton: {
+        backgroundColor: colors.error,
+        paddingVertical: height * 0.008,
+        paddingHorizontal: width * 0.03,
+        borderRadius: 6,
+        minWidth: undefined,
+        width: undefined,
+        marginVertical: 0,
+        marginLeft: 10,
+        alignSelf: 'center',
+    },
+    logoutButtonText: {
+        fontSize: Math.min(width * 0.032, 13),
+        color: colors.white,
+        fontWeight: 'bold',
+        letterSpacing: 0.5,
     },
 });
 
